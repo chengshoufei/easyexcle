@@ -8,6 +8,13 @@ package com.example.demo1.utils.uuid;
  */
 public class IdUtils
 {
+    public static void main ( String[] args ) {
+        System.out.println (IdUtils.fastUUID () );
+        System.out.println (IdUtils.fastSimpleUUID () );
+        System.out.println (IdUtils.randomUUID () );
+        System.out.println (IdUtils.simpleUUID () );
+
+    }
     /**
      * 获取随机UUID
      *
