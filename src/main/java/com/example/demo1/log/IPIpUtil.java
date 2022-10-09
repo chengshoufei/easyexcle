@@ -1,8 +1,7 @@
 package com.example.demo1.log;
 
-import java.net.InetAddress;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
+import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**

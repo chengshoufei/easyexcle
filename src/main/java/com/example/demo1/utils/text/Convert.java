@@ -799,7 +799,7 @@ public class Convert
         }
         else if (obj instanceof byte[] || obj instanceof Byte[])
         {
-            return str((Byte[]) obj, charset);
+            return str( obj , charset);
         }
         else if (obj instanceof ByteBuffer)
         {
@@ -895,7 +895,7 @@ public class Convert
      */
     public static String toSBC(String input, Set<Character> notConvertSet)
     {
-        char c[] = input.toCharArray();
+        char[] c = input.toCharArray();
         for (int i = 0; i < c.length; i++)
         {
             if (null != notConvertSet && notConvertSet.contains(c[i]))
@@ -937,7 +937,7 @@ public class Convert
      */
     public static String toDBC(String text, Set<Character> notConvertSet)
     {
-        char c[] = text.toCharArray();
+        char[] c = text.toCharArray();
         for (int i = 0; i < c.length; i++)
         {
             if (null != notConvertSet && notConvertSet.contains(c[i]))

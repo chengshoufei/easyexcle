@@ -51,12 +51,12 @@ public class Rsa {
         REQ_PRI = Rsa.privateDecrypt ( REQ_PRI , Rsa.getPrivateKey ( Rsa.REQ_PRI ) );
         System.out.println ( "请求体解密后文字: \r\n" + REQ_PRI );
         //响应体加密
-        String RES_PUB = "";
+        String RES_PUB = "12312412312";
         RES_PUB = Rsa.publicEncrypt ( RES_PUB , Rsa.getPublicKey ( Rsa.RES_PUB ) );
         System.out.println ( "响应体加密:\r\n" + RES_PUB );
 
         //响应体解密
-        String RES_PRI = "";
+        String RES_PRI = "iJrv0EpRWb7Q7MNUPIbSGl43jra98doZJuWytNXsgO5lTACA5xG3Qz3EABi9l5xazw23O3E3Hq6jMCEAPPPRzG+nbKgDUCX1AdzA6NfnYQ+L9ic7YgTFYFD8qqj16kt0a2msqliw6c+83RwUomEg5ur6KfCZ38KPFALkPaN+Ka9W+/dqYXn4ZAzW/0ba4IC9plC9+zwnHf/a8dW2tj3r8Xkm8x3WFasMwnmeYeeEESwY6kDWpf3BWuNIaVn4ghQBmR09sriLx3q33cYDLqhWHVW5xaNb5w5TJKTQGRxQig/LPSX+g1hxGG3tZlB9D1uwDU8rFLTIsWuF2XvJiEgYnQ==";
         RES_PRI = Rsa.privateDecrypt ( RES_PRI , Rsa.getPrivateKey ( Rsa.RES_PRI ) ); //传入密文和私钥,得到明文
         System.out.println ( "响应体解密: \r\n" + RES_PRI );
 

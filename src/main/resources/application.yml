@@ -27,3 +27,19 @@ redis:
       min-idle: 0
       #连接超时时间
       timeout: 10000
+
+xxl:
+  job:
+    admin:
+      # xxl-job后台管理界面的地址
+      addresses: http://127.0.0.1:8080/xxl-job-admin
+    executor:
+      # 此执行器的名称
+      appname: first-study
+      # 此执行器的端口
+      port: 9999
+      # 此执行器的日志存放路径
+      logpath: logs/xxl-job/first-study
+      # 此执行器的日志保存时间
+      logretentiondays: 7
+

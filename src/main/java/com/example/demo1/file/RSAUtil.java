@@ -22,19 +22,19 @@ public class RSAUtil {
     /**
      * 指定加密算法为RSA
      */
-    private static String ALGORITHM = "RSA";
+    private static final String ALGORITHM = "RSA";
     /**
      * 指定key的大小
      */
-    private static int KEYSIZE = 1024;
+    private static final int KEYSIZE = 1024;
     /**
      * 指定公钥存放文件
      */
-    private static String PUBLIC_KEY_FILE = "PublicKey";
+    private static final String PUBLIC_KEY_FILE = "PublicKey";
     /**
      * 指定私钥存放文件
      */
-    private static String PRIVATE_KEY_FILE = "PrivateKey";
+    private static final String PRIVATE_KEY_FILE = "PrivateKey";
 
     public static final String KEY_ALGORITHM = "RSA";
     public static final String SIGNATURE_ALGORITHM = "MD5withRSA";
@@ -207,7 +207,8 @@ public class RSAUtil {
      * @return
      */
     public static String bcd2Str(byte[] bytes) {
-        char temp[] = new char[bytes.length * 2], val;
+        char[] temp = new char[bytes.length * 2];
+        char val;
         for (int i = 0; i < bytes.length; i++) {
             val = (char) (((bytes[i] & 0xf0) >> 4) & 0x0f);
             temp[i * 2] = (char) (val > 9 ? val + 'A' - 10 : val + '0');

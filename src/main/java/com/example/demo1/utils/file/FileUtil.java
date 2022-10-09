@@ -99,12 +99,9 @@ public class FileUtil extends org.apache.commons.io.FileUtils {
         }
 
         // 检查允许下载的文件规则
-        if ( ArrayUtils.contains ( MimeTypeUtils.DEFAULT_ALLOWED_EXTENSION , FileTypeUtils.getFileType ( resource ) ) ) {
-            return true;
-        }
+        return ArrayUtils.contains ( MimeTypeUtils.DEFAULT_ALLOWED_EXTENSION , FileTypeUtils.getFileType ( resource ) );
 
         // 不在允许下载的文件规则
-        return false;
     }
 
     /**

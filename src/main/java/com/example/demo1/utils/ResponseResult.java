@@ -69,11 +69,7 @@ public class ResponseResult<T> {
     }
 
     public static boolean feignClientIsTrue(ResponseResult responseResult) {
-        if (ResponseResult.responseCode.equals(responseResult.getCode()) && !CollectionUtils.isEmpty(responseResult.getData())) {
-            return true;
-        } else {
-            return false;
-        }
+        return ResponseResult.responseCode.equals ( responseResult.getCode ( ) ) && !CollectionUtils.isEmpty ( responseResult.getData ( ) );
     }
 
     public static <T> ResponseResult<T> success(String message) {

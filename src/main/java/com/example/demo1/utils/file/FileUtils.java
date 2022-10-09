@@ -15,9 +15,9 @@ public class FileUtils {
     public static void main ( String[] args ) throws Exception {
         try {
             //每个text 生成字符数量
-            Integer count = 1000000000;
+            Integer count = 10000000;
 
-            String s = FileUtils.BASE64File ( "C:\\Users\\USER\\Desktop\\jar\\ext-6.2.0-gpl.zip" , "C:\\Users\\USER\\Desktop\\jar\\123\\" , "text" , count );
+            String s = FileUtils.BASE64File ( "C:\\Users\\USER\\Desktop\\jar\\XML.rar" , "C:\\Users\\USER\\Desktop\\jar\\123\\" , "text" , count );
             System.out.println ( s );
         } catch (Exception e) {
             throw new RuntimeException ( e );
@@ -70,9 +70,7 @@ public class FileUtils {
             file1.close ( );
             base64toZip = os1.toString ( );
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException ( e );
-        } catch (IOException e) {
+        }catch (Exception e) {
             throw new RuntimeException ( e );
         }
 
@@ -82,7 +80,7 @@ public class FileUtils {
             if ( base64toZip.length ( ) % count != 0 ) {
                 size += 1;
             }
-            List < String > list = new ArrayList < String > ( );
+            List < String > list = new ArrayList <  > ( );
             for (int index = 0; index < size; index++) {
                 String childStr = substring ( base64toZip , index * count , (index + 1) * count );
                 list.add ( childStr );
@@ -112,7 +110,7 @@ public class FileUtils {
             return null;
         }
         if ( t > str.length ( ) ) {
-            return str.substring ( f , str.length ( ) );
+            return str.substring ( f );
         } else {
             return str.substring ( f , t );
         }
@@ -187,7 +185,6 @@ public class FileUtils {
      * 获取指定文件夹下所有文件，不含文件夹里的文件
      *
      * @param dirFilePath 文件夹路径
-     * @return
      */
     public static List < File > getAllFile ( String dirFilePath ) {
         if ( StrUtil.isBlank ( dirFilePath ) ) {
@@ -201,7 +198,6 @@ public class FileUtils {
      * 获取指定文件夹下所有文件，不含文件夹里的文件
      *
      * @param dirFile 文件夹
-     * @return
      */
     public static List < File > getAllFile ( File dirFile ) {
         // 如果文件夹不存在或着不是文件夹，则返回 null
